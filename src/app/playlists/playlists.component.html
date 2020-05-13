@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <ul>
+            <li>PLAYLISTY</li>
+            <ul class="playlist-list">
+              <ng-container *ngFor="let item of playlistArray | async">
+                  <li>{{ item.name}}</li>
+               </ng-container>
+            </ul>
+        </ul>
+    </div>
+</div>

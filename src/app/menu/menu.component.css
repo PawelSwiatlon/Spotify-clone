@@ -1,0 +1,18 @@
+.container {
+    background-color: #0a0a0a;
+    height: 100vh;
+    color: gray;
+    padding-top: 30px;
+}
+ul {
+    list-style: none;
+}
+li:nth-child(n+2) {
+    font-weight: bold;
+}
+hr {
+    background-color: gray;
+}
+.row {
+    border-bottom: 1px solid grey;
+}

@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+}
+li:nth-child(n+2) {
+    font-weight: bold;
+}
+.playlist-list {
+  overflow:hidden;
+  overflow-y:scroll;
+  height: 70vh;
+  scrollbar-color: grey black;
+}
+
