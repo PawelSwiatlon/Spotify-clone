@@ -11,7 +11,7 @@ export class Login2Component implements OnInit {
   constructor(route: ActivatedRoute, SpotifyService: SpotifyService, router: Router) {
     const accessToken = route.snapshot.paramMap.get('accessToken');
     const refreshToken = route.snapshot.paramMap.get('refreshToken');
-    SpotifyService.setAccessToken(accessToken);
+    SpotifyService.setAccessToken(accessToken, true);
     localStorage.setItem('refreshToken', JSON.stringify(refreshToken))
     router.navigate(['/home']);
    }

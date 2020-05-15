@@ -13,13 +13,14 @@ export class PlaylistsComponent implements OnInit {
 
   constructor(SpotifyService: SpotifyService) {
     this.spotifyService = SpotifyService;
-    this.playlistArray = this.spotifyService.getUserPlaylists();
+
 
 
 
   }
 
   ngOnInit(): void {
+    this.playlistArray = this.spotifyService.getUserPlaylists();
   }
 
 
