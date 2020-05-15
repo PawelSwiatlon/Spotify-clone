@@ -17,21 +17,40 @@ export class SpotifyService {
   constructor(http: HttpClient) {
       this.spotifyApi =  new spotifyWebApi();
       this.http = http;
+
+      //refresh access token every 55min
+      this.refreshToken(3300000);
+
     }
 
    setAccessToken(accessToken){
      this.spotifyApi.setAccessToken(accessToken);
-     //localStorage.setItem('spotifyApi', JSON.stringify(accessToken));
+     localStorage.setItem('accessToken', JSON.stringify(accessToken));
    }
 
   getUserPlaylists(){
     return from(this.spotifyApi.getUserPlaylists( {limit: '50'}))
       .pipe(map((res: any) => res.body.items));
   }
-  refreshToken(){
-    return this.http.get('api');
+  async refreshToken(ms: number, instantRefresh = false){
+      if(!instantRefresh){
+        await delay(ms);
+      }
+      console.log('refreshed');
+      this.http.get('api').subscribe(
+        (res: any) =>{
+          this.spotifyApi.setAccessToken(res.token);
+        }
+      );
+    this.refreshToken(ms);
   }
 
 
+
+}
+
+
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
