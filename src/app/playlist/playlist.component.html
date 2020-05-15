@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+      <ul>
+          <li>tracks</li>
+          <ul class="track-list">
+            <ng-container *ngFor="let item of tracksArray | async">
+                <li>{{ item.track.name}}</li>
+             </ng-container>
+          </ul>
+      </ul>
+  </div>
+</div>

@@ -4,7 +4,7 @@
             <li>PLAYLISTY</li>
             <ul class="playlist-list">
               <ng-container *ngFor="let item of playlistArray | async">
-                  <li>{{ item.name}}</li>
+                  <li><a [routerLink]="'playlist/'+item.id">{{ item.name}}</a></li>
                </ng-container>
             </ul>
         </ul>

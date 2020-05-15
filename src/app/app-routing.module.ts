@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import { Login2Component } from './login/login2.component';
+import { PlaylistComponent} from './playlist/playlist.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'playlist/:id',
+        component: PlaylistComponent
+      }
+    ]
   },
   {
     path: 'login2/:accessToken/:refreshToken',

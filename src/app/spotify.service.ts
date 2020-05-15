@@ -32,6 +32,13 @@ export class SpotifyService {
     return from(this.spotifyApi.getUserPlaylists( {limit: '50'}))
       .pipe(map((res: any) => res.body.items));
   }
+
+  getPlaylist(playlistid: string){
+    return this.spotifyApi.getPlaylist( playlistid).then(
+    (res: any) => {console.log(res.body); return res.body.tracks.items});
+
+  }
+
   async refreshToken(ms: number, instantRefresh = false){
       if(!instantRefresh){
         await delay(ms);
@@ -44,6 +51,7 @@ export class SpotifyService {
       );
     this.refreshToken(ms);
   }
+
 
 
 

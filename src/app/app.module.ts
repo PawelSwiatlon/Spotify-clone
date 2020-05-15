@@ -9,6 +9,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     PlaylistsComponent,
     MainWindowComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,

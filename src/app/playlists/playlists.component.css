@@ -10,4 +10,8 @@ li:nth-child(n+2) {
   height: 70vh;
   scrollbar-color: grey black;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
