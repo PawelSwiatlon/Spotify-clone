@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row info">
-    <h1>Playlist: </h1>
+    <h1>{{playlistName}}:</h1>
   </div>
   <div class="row list">
-    <ng-container *ngFor="let item of tracksArray | async">
+    <ng-container *ngFor="let item of tracksArray">
       <div class="card">
         <img class="card-img-top" [src]="item.track.album.images[0].url" alt="Card image cap" />
         <div class="card-body">

@@ -38,7 +38,7 @@ export class SpotifyService {
 
   getPlaylist(playlistid: string){
     return this.spotifyApi.getPlaylist( playlistid).then(
-    (res: any) => {console.log(res.body); return res.body.tracks.items});
+    (res: any) => {console.log(res.body); return res.body});
 
   }
 
