@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { SpotifyService } from '../spotify.service'
 import { from } from 'rxjs';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-playlist',
@@ -13,6 +14,7 @@ export class PlaylistComponent implements OnInit {
   playlistName: string;
   spotifyService: SpotifyService;
   route: ActivatedRoute;
+  faPlay = faPlay;
 
   constructor(route: ActivatedRoute, spotifyService: SpotifyService) {
     this.spotifyService = spotifyService;

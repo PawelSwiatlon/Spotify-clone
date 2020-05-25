@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service'
 import { Observable } from 'rxjs';
+import {faPlusCircle, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-playlists',
@@ -9,6 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class PlaylistsComponent implements OnInit {
   spotifyService;
+  faPlusCircle = faPlusCircle;
+  faHeart = faHeart;
   playlistArray: Observable<any>;
 
   constructor(SpotifyService: SpotifyService) {
