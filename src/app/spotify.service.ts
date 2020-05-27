@@ -26,7 +26,7 @@ export class SpotifyService {
        localStorage.setItem('accessToken', JSON.stringify(accessToken));
      }
       this.spotifyApi.setAccessToken(accessToken);
-      console.log(accessToken);
+      console.log(this.spotifyApi);
    }
 
   getUserPlaylists(){
@@ -52,6 +52,10 @@ export class SpotifyService {
       );
       //autorefresh every 59mins
     this.refreshToken(3540000);
+  }
+
+  getCurrentAccessToken(){
+    return this.spotifyApi._credentials.accessToken;
   }
 
 
