@@ -55,7 +55,7 @@ export class SpotifyService {
   }
 
   getCurrentAccessToken(){
-    return this.spotifyApi._credentials.accessToken;
+    return [this.spotifyApi._credentials.accessToken];
   }
 
 
